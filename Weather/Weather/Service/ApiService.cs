@@ -5,48 +5,41 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Weather.Models;
+using System.Runtime.CompilerServices;
 
 namespace Weather.Service
 {
-    public class ApiService : IApiService
+    public class ApiService 
     {
-        public async Task<Response> GetListAsync<T>(string urlBase, string servicePrefix, string controller)
+        private readonly HttpClient _HttpClient;
+        public ApiService()
         {
+            _HttpClient = new HttpClient();
+        }
+        public async Task<DadosClima> GetApiAsync(string cidade)
+        {
+
             try
             {
-                var client = new HttpClient
-                {
-                    BaseAddress = new Uri(urlBase),
-                };
-
-                var url = $"{servicePrefix}{controller}";
-                var response = await client.GetAsync(url);
-                var result = await response.Content.ReadAsStringAsync();
+                string url = $"{Acessos.ApiBaseUrl}{cidade}{Acessos.CodigoPais}&appid={Acessos.AppId}&units=metric";
+                HttpResponseMessage response = await _HttpClient.GetAsync($"{Acessos.ApiBaseUrl}{cidade}{Acessos.CodigoPais}&appid={Acessos.AppId}&units=metric");
 
                 if (!response.IsSuccessStatusCode)
-                {
-                    return new Response
-                    {
-                        IsSuccess = false,
-                        Message = result,
-                    };
-                }
+                    await App.Current.MainPage.DisplayAlert("Error", "Alguma coisa de errado não deu certo!!!", "Ok");
 
-                var list = JsonConvert.DeserializeObject<List<T>>(result);
-                return new Response
-                {
-                    IsSuccess = true,
-                    Result = list
-                };
+                var conteudoResponse = await response.Content.ReadAsStringAsync();
+
+                var responseClima = JsonConvert.DeserializeObject<DadosClima>(conteudoResponse);
+
+                return responseClima;
             }
             catch (Exception ex)
             {
-                return new Response
-                {
-                    IsSuccess = false,
-                    Message = ex.Message
-                };
+                throw ex;
             }
+           
         }
+
+       
     }
 }

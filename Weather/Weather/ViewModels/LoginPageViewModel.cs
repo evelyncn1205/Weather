@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Weather.Views;
 using Xamarin.Forms;
 
 namespace Weather.ViewModels
@@ -75,8 +76,8 @@ namespace Weather.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Ok", "Login successful!!", "Accept");
 
                 //// Navegação para a página de livro
-                //await NavigationService.NavigateAsync
-                //($"/{nameof(WorldLibraryMasterDetailPage)}/NavigationPage/{nameof(BooksPage)}");
+                await NavigationService.NavigateAsync
+                ($"/{nameof(WeatherMasterDetailPageViewModel)}/NavigationPage/{nameof(WeatherPage)}");
             }
             else
             {

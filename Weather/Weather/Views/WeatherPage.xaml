@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Weather.Views.WeatherPage"
+             Title="{Binding Title}">
+
+    <NavigationPage.TitleView>
+        <Label Text="Weather" FontSize="Medium" TextColor="White" />
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Padding="10" >
+            <Label Text="Digite o nome da cidade:" FontSize="Medium" />
+            <Entry x:Name="txtPesquisa" 
+                   Placeholder="Cidade" 
+                   FontSize="Medium" 
+                   Margin="0,20,0,0" />
+
+            <Button Text="Pesquisar" Clicked="OnClickPesquisar" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="txtCidade" 
+                       FontSize="Large" 
+                       FontAttributes="Bold" 
+                       Grid.Row="0" 
+                       Grid.Column="0" />
+
+                <Label Text="Temperatura Atual:" 
+                       FontSize="Medium" 
+                       Margin="20,0,0,0" 
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+
+                <Label x:Name="txtTemp" 
+                       FontSize="Medium" 
+                       Margin="20,0,0,0"                       
+                       Grid.Row="1"
+                       Grid.Column="1" />
+
+                <Label Text="Humidade:" 
+                       FontSize="Medium" 
+                       Margin="20,0,0,0" 
+                       Grid.Row="2"
+                       Grid.Column="0" />
+
+                <Label x:Name="txtHumidade"
+                       FontSize="Medium"
+                       Margin="20,0,0,0"
+                       Grid.Row="2"
+                       Grid.Column="1" />
+
+                <Label Text="Mínima:" 
+                       FontSize="Medium" 
+                       Margin="20,0,0,0" 
+                       Grid.Row="3"
+                       Grid.Column="0" />
+
+                <Label x:Name="txtMin" 
+                       FontSize="Medium" 
+                       Margin="20,0,0,0"
+                       Grid.Row="3"
+                       Grid.Column="1" />
+
+                <Label Text="Máxima:" 
+                       FontSize="Medium" 
+                       Margin="20,0,0,0" 
+                       Grid.Row="4"
+                       Grid.Column="0" />
+
+                <Label x:Name="txtMax"
+                       FontSize="Medium" 
+                       Margin="20,0,0,0" 
+                       Grid.Row="4"
+                       Grid.Column="1" />
+                
+                
+               
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
