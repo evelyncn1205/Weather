@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Weather.Models;
 using Weather.Service;
+using Weather.Views;
 
 namespace Weather.ItemViewModel
 {
@@ -12,6 +13,7 @@ namespace Weather.ItemViewModel
     {
         private readonly INavigationService _navigationService;
         private DelegateCommand _selectMenuCommand;
+
         public MenuItemViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -25,8 +27,9 @@ namespace Weather.ItemViewModel
 
         private async void SelectMenuAsync()
         {
-            await _navigationService.NavigateAsync
-                ($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{PageName}");
+            
+            //await _navigationService.NavigateAsync
+            //  ($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{PageName}");
         }
     }
 }

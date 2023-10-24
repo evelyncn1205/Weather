@@ -76,8 +76,9 @@ namespace Weather.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Ok", "Login successful!!", "Accept");
 
                 //// Navegação para a página de livro
-                await NavigationService.NavigateAsync
-                ($"/{nameof(WeatherMasterDetailPageViewModel)}/NavigationPage/{nameof(WeatherPage)}");
+                //await NavigationService.NavigateAsync
+                //($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{nameof(WeatherPage)}");
+                await NavigationService.NavigateAsync(nameof(WeatherPage));
             }
             else
             {

@@ -2,9 +2,9 @@
 
 namespace Weather.Views
 {
-    public partial class WeatherMasterDetailPage : MasterDetailPage
+    public partial class SobrePage : ContentPage
     {
-        public WeatherMasterDetailPage()
+        public SobrePage()
         {
             InitializeComponent();
         }

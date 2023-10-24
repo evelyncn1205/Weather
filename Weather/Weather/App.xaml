@@ -6,6 +6,37 @@
   <Application.Resources>
 
     <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!--Patameters-->
+            <x:String x:Key="ApiBaseUrl">http://api.openweathermap.org/data/2.5/weather?q=</x:String>
 
-  </Application.Resources>
+            <!--  Colors  -->
+            <Color x:Key="ColorBackground">#049DD9</Color>
+            <Color x:Key="ColorPrimary">#134980</Color>
+            <Color x:Key="ColorSecondary">#0477BF</Color>
+            <Color x:Key="ColorDanger">#7EDDF2</Color>
+            <Color x:Key="ColorAccent">#7EDDF2</Color>
+            <Color x:Key="ColorFont">#D9D9D9</Color>
+            <Color x:Key="ColorFontInverse">#D9D9D9</Color>
+
+            <!--  Styles  -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="{StaticResource ColorFontInverse}" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorFont}" />
+            </Style>
+
+            <Style x:Key="SecondaryButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorSecondary}" />
+            </Style>
+
+            <Style x:Key="DangerButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorDanger}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </prism:PrismApplication>

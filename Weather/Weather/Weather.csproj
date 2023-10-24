@@ -14,13 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Service\WeatherMasterDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\WeatherMasterDetailPage.xaml">
+    <EmbeddedResource Update="Views\SobrePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\WeatherPage.xaml">

@@ -9,14 +9,14 @@ using System.Runtime.CompilerServices;
 
 namespace Weather.Service
 {
-    public class ApiService 
+    public class ApiService : IApiService
     {
         private readonly HttpClient _HttpClient;
         public ApiService()
         {
             _HttpClient = new HttpClient();
         }
-        public async Task<DadosClima> GetApiAsync(string cidade)
+        public async Task<DadosClima> GetApiAsync<T>(string cidade)
         {
 
             try

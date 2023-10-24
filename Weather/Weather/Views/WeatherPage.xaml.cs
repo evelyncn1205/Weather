@@ -25,17 +25,17 @@ namespace Weather.Views
 
         private async void PegarDadosClima(string cidade)
         {
-            var dadosClima = await ClimaTempo.GetApiAsync(cidade);
+            var dadosClima = await ClimaTempo.GetApiAsync<DadosClima>(cidade);
 
             txtCidade.Text = dadosClima.NomeCidade;
             txtTemp.Text = $"{dadosClima.Clima.Temperatura}° C";
             txtMin.Text = $"{dadosClima.Clima.TemperaturaMaxima}° C";
             txtMax.Text = $"{dadosClima.Clima.TemperaturaMinina}° C";
             txtHumidade.Text = $"{dadosClima.Clima.Humidade} %";
-            //txtNascerDoSol.Text= dadosClima.Clima.SysInfo.NascerDoSol.ToString();
-            //txtPorDoSol.Text= dadosClima.Clima.SysInfo.PorDoSol.ToString();
-            //txtVento.Text= dadosClima.Clima.VentoInfo.Velocidade.ToString();
-            
+            //txtNascerDoSol.Text = DateTimeOffset.FromUnixTimeSeconds(dadosClima.Clima.SysInfo.NascerDoSol).LocalDateTime.ToString("HH:mm:ss");
+            //txtPorDoSol.Text = DateTimeOffset.FromUnixTimeSeconds(dadosClima.Clima.SysInfo.PorDoSol).LocalDateTime.ToString("HH:mm:ss");
+            //txtVento.Text = dadosClima.Clima.VentoInfo.Velocidade.ToString() + " mph";
+
 
         }
 
