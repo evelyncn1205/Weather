@@ -19,8 +19,13 @@
 
         <StackLayout Padding="10" 
                      AbsoluteLayout.LayoutBounds="0,0,1,1"
-                     AbsoluteLayout.LayoutFlags="All"> 
-             
+                     AbsoluteLayout.LayoutFlags="All">
+            <Image Source="ic_weather.jpg" 
+                           
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"
+                           WidthRequest="230" 
+                           HeightRequest="230" />
             <Label Text="Digite o nome da cidade:" FontSize="Medium" />
                 <Entry x:Name="txtPesquisa" 
                    Placeholder="Cidade" 
@@ -28,15 +33,16 @@
                    Margin="0,20,0,0" />
 
                 <Button Text="Pesquisar" Clicked="OnClickPesquisar" />
-                
-                <Grid>
+
+            <Grid HeightRequest="600">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
+                         <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
@@ -61,46 +67,49 @@
                        Margin="20,0,0,0"                       
                        Grid.Row="1"
                        Grid.Column="1" />
-
-                    <Label Text="Humidade:" 
+                        
+                    <Label Text="Temperatura Mínima:" 
                        FontSize="Medium" 
                        Margin="20,0,0,0" 
                        Grid.Row="2"
-                       Grid.Column="0" />
-
-                    <Label x:Name="txtHumidade"
-                       FontSize="Medium"
-                       Margin="20,0,0,0"
-                       Grid.Row="2"
-                       Grid.Column="1" />
-
-                    <Label Text="Mínima:" 
-                       FontSize="Medium" 
-                       Margin="20,0,0,0" 
-                       Grid.Row="3"
                        Grid.Column="0" />
 
                     <Label x:Name="txtMin" 
                        FontSize="Medium" 
                        Margin="20,0,0,0"
-                       Grid.Row="3"
+                       Grid.Row="2"
                        Grid.Column="1" />
 
-                    <Label Text="Máxima:" 
+                    <Label Text="Temperatura Máxima:" 
                        FontSize="Medium" 
                        Margin="20,0,0,0" 
-                       Grid.Row="4"
+                       Grid.Row="3"
                        Grid.Column="0" />
 
                     <Label x:Name="txtMax"
                        FontSize="Medium" 
                        Margin="20,0,0,0" 
+                       Grid.Row="3"
+                       Grid.Column="1" />
+
+                    <Label Text="Humidade:" 
+                       FontSize="Medium" 
+                       Margin="20,0,0,0" 
+                       Grid.Row="4"
+                       Grid.Column="0" />
+
+                    <Label x:Name="txtHumidade"
+                       FontSize="Medium"
+                       Margin="20,0,0,0"
                        Grid.Row="4"
                        Grid.Column="1" />
 
-                    </StackLayout>
+                    
 
-                </Grid>
+                    
+                </StackLayout>
+               
+            </Grid>
             </StackLayout>
       
         <busyindicator:SfBusyIndicator

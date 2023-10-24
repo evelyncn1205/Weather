@@ -23,13 +23,10 @@ namespace Weather.ItemViewModel
             _selectMenuCommand ??
             (_selectMenuCommand = new DelegateCommand(SelectMenuAsync));
 
-
-
         private async void SelectMenuAsync()
         {
-            
-            //await _navigationService.NavigateAsync
-            //  ($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{PageName}");
+            await _navigationService.NavigateAsync
+              ($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{PageName}");
         }
     }
 }

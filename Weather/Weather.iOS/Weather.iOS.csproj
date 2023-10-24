@@ -225,7 +225,7 @@
     <BundleResource Include="Resources\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_about.png" />
+    <BundleResource Include="Resources\ic_person.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 using Prism;
 using Prism.Ioc;
+using Prism.Navigation;
 using Syncfusion.Licensing;
 using Weather.Service;
 using Weather.ViewModels;
@@ -22,10 +23,10 @@ namespace Weather
             SyncfusionLicenseProvider.RegisterLicense("Mjc1ODUzNkAzMjMzMmUzMDJlMzBMeEJ1Vk5qNHBkeUNsdk1NVk1PdkxqaE1wRzUwb1cvWWN1V3NXM0hpVEQwPQ==");
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
-            //MainPage = new NavigationPage(new WeatherMasterDetailPage());
-            //await NavigationService.NavigateAsync
-            //   ($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{nameof(WeatherPage)}");
+            
+            await NavigationService.NavigateAsync
+              ($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{nameof(LoginPage)}");
+            
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -36,6 +37,7 @@ namespace Weather
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<WeatherPage, WeatherPageViewModel>();            
             containerRegistry.RegisterForNavigation<SobrePage, SobrePageViewModel>();
+            containerRegistry.RegisterForNavigation<WeatherMasterDetailPage, WeatherMasterDetailPageViewModel>();
         }
     }
 }

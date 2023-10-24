@@ -5,6 +5,14 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Weather.Views.SobrePage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             Title="{Binding Title}">
-  
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource ColorBackground}">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Image Source="ic_weather.jpgg" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" />
+
+        <Label Text="Autor: Evelyn Nunes" FontSize="Medium" HorizontalOptions="Center" />
+        <Label Text="Versão: 1.0" FontSize="Medium" HorizontalOptions="Center" />
+        <Label Text="Data: 24/10/2023" FontSize="Medium" HorizontalOptions="Center" />
+    </StackLayout>
 </ContentPage>

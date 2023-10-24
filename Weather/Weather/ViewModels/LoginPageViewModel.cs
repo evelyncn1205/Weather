@@ -63,22 +63,16 @@ namespace Weather.ViewModels
                 return;
             }
 
-            //if(!this.Email.Equals("clara_dias@yopmail.com") || !this.Password.Equals("123456"))
-            //{
-            //    await Application.Current.MainPage.DisplayAlert(
-            //        "Error",
-            //        "User or password wrong",
-            //        "Accept");
-            //}
+            
             if (this.Email.Equals(Email) && this.Password.Equals("123456"))
             {
-                // Exibir alerta de login bem-sucedido
+                
                 await Application.Current.MainPage.DisplayAlert("Ok", "Login successful!!", "Accept");
 
-                //// Navegação para a página de livro
-                //await NavigationService.NavigateAsync
-                //($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{nameof(WeatherPage)}");
-                await NavigationService.NavigateAsync(nameof(WeatherPage));
+             
+                await NavigationService.NavigateAsync
+                ($"/{nameof(WeatherMasterDetailPage)}/NavigationPage/{nameof(WeatherPage)}");
+               
             }
             else
             {
